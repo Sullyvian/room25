@@ -23,6 +23,11 @@ public class LapCounter {
      */
     private int numPlayers;
 
+    /**
+     * Create a new Lap counter with players and initial countdown.
+     * @param players players of the game.
+     * @param initialCountdown initial countdown.
+     */
     protected LapCounter(Player[] players, int initialCountdown) {
         this.countdown = initialCountdown;
         this.maxNbOfLaps = -initialCountdown;

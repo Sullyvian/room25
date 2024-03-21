@@ -8,4 +8,8 @@ public abstract class Character {
         return this.name;
     }
 
+    Character(String name) {
+        this.name = name;
+    }
+
 }
