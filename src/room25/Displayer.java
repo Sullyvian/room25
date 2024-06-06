@@ -9,7 +9,16 @@ public class Displayer {
     private static final String ANSI_YELLOW = "\u001B[33m";
     private static final String ANSI_RED = "\u001B[31m";
 
-    protected static void display(Room room) {
+    protected static void display(Complex complex) {
+        for (int i = 0; i < complex.getSIZE(); i++) {
+            for (int j = 0; j < complex.getSIZE(); j++) {
+                display(complex.getRoom(i, j));
+            }
+            System.out.println();
+        }
+    }
+
+    private static void display(Room room) {
         String colorCode;
         if (room == null) {
             System.out.println("BBBBBBBBBB");
@@ -28,15 +37,6 @@ public class Displayer {
                 colorCode = "\u001B[0m";
         }
         System.out.print(colorCode + '\u2588' + ANSI_RESET);
-    }
-
-    protected static void display(Complex complex) {
-        for (Room[] roomRow : complex.getRooms()) {
-            for (Room room : roomRow) {
-                display(room);
-            }
-            System.out.println();
-        }
     }
 
 }
